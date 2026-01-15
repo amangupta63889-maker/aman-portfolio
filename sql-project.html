@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQL Project | Social Media Analytics</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      margin: 0;
+      line-height: 1.7;
+    }
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(120deg, #0f172a, #020617);
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h1, h2, h3 { color: #38bdf8; }
+    code {
+      background: #020617;
+      display: block;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #1e293b;
+      color: #e5e7eb;
+      overflow-x: auto;
+    }
+    .box {
+      background: rgba(15,23,42,0.9);
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+    }
+    a { color: #38bdf8; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SQL Project: Social Media Analytics</h1>
+  <p>End-to-end SQL analytics project simulating a real social media platform</p>
+</header>
+
+<section>
+  <div class="box">
+    <h2>📌 Business Problem</h2>
+    <p>Social media platforms need to understand user engagement, content performance, and growth trends. The objective of this project is to analyze user behavior and platform performance using structured SQL queries.</p>
+  </div>
+
+  <div class="box">
+    <h2>🗂 Dataset Design</h2>
+    <p>The database consists of 4 core tables:</p>
+    <ul>
+      <li><b>users</b> – user_id, name, signup_date</li>
+      <li><b>posts</b> – post_id, user_id, post_date</li>
+      <li><b>likes</b> – like_id, user_id, post_id</li>
+      <li><b>followers</b> – follower_id, following_id</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>🛠 Tools Used</h2>
+    <p>MySQL, SQL Joins, Subqueries, Aggregations, Window Functions</p>
+  </div>
+
+  <div class="box">
+    <h2>📊 Key SQL Analysis</h2>
+
+    <h3>1️⃣ Top 5 Most Engaged Users</h3>
+    <code>
+SELECT u.name, COUNT(l.like_id) AS total_likes
+FROM users u
+JOIN posts p ON u.user_id = p.user_id
+JOIN likes l ON p.post_id = l.post_id
+GROUP BY u.name
+ORDER BY total_likes DESC
+LIMIT 5;
+    </code>
+
+    <h3>2️⃣ Monthly User Signup Trend</h3>
+    <code>
+SELECT DATE_FORMAT(signup_date, '%Y-%m') AS month,
+       COUNT(user_id) AS total_users
+FROM users
+GROUP BY month
+ORDER BY month;
+    </code>
+
+    <h3>3️⃣ Most Liked Posts</h3>
+    <code>
+SELECT p.post_id, COUNT(l.like_id) AS likes
+FROM posts p
+LEFT JOIN likes l ON p.post_id = l.post_id
+GROUP BY p.post_id
+ORDER BY likes DESC;
+    </code>
+
+    <h3>4️⃣ Inactive Users (No Posts)</h3>
+    <code>
+SELECT u.name
+FROM users u
+LEFT JOIN posts p ON u.user_id = p.user_id
+WHERE p.post_id IS NULL;
+    </code>
+  </div>
+
+  <div class="box">
+    <h2>📈 Business Insights</h2>
+    <ul>
+      <li>Identified high-engagement users for influencer targeting</li>
+      <li>Tracked platform growth using monthly signups</li>
+      <li>Detected inactive users for re-engagement campaigns</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>🎯 Conclusion</h2>
+    <p>This project demonstrates my ability to design databases, write optimized SQL queries, and convert raw data into meaningful business insights.</p>
+    <p><a href="index.html">← Back to Portfolio</a></p>
+  </div>
+</section>
+
+</body>
+</html>
