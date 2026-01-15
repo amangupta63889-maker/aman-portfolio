@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Excel Project | MIS Automation & Reporting</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      margin: 0;
+      line-height: 1.7;
+    }
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(120deg, #0f172a, #020617);
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h1, h2, h3 { color: #38bdf8; }
+    .box {
+      background: rgba(15,23,42,0.9);
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+    }
+    code {
+      background: #020617;
+      display: block;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #1e293b;
+      color: #e5e7eb;
+      overflow-x: auto;
+    }
+    ul li { margin-bottom: 8px; }
+    a { color: #38bdf8; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Excel Project: MIS Automation & Reporting</h1>
+  <p>PAN‑India MIS automation using advanced Excel formulas and dashboards</p>
+</header>
+
+<section>
+  <div class="box">
+    <h2>📌 Business Problem</h2>
+    <p>Manual MIS reporting across regions caused delays, data mismatches, and repetitive effort. The objective was to automate daily and monthly MIS reports using Excel to improve accuracy and turnaround time.</p>
+  </div>
+
+  <div class="box">
+    <h2>🗂 Dataset Overview</h2>
+    <ul>
+      <li>Branch‑wise disbursement data (PAN‑India)</li>
+      <li>Product category & supervisor mapping</li>
+      <li>Date‑wise performance and targets</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>🛠 Tools & Techniques Used</h2>
+    <ul>
+      <li>Advanced Excel</li>
+      <li>Pivot Tables & Pivot Charts</li>
+      <li>VLOOKUP / XLOOKUP</li>
+      <li>SUMIFS, COUNTIFS</li>
+      <li>Conditional Formatting</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>⚙️ Automation Logic</h2>
+
+    <h3>1️⃣ Data Mapping (Supervisor & Product)</h3>
+    <code>
+=XLOOKUP(A2, Mapping!A:A, Mapping!B:B)
+    </code>
+
+    <h3>2️⃣ KPI Calculation</h3>
+    <code>
+=SUMIFS(Disbursement!E:E, Disbursement!A:A, $A2, Disbursement!B:B, ">="&StartDate, Disbursement!B:B, "<="&EndDate)
+    </code>
+
+    <h3>3️⃣ Performance Status</h3>
+    <code>
+=IF(Achievement >= Target, "Achieved", "Not Achieved")
+    </code>
+  </div>
+
+  <div class="box">
+    <h2>📊 Output & Dashboards</h2>
+    <ul>
+      <li>Branch & region‑wise performance summary</li>
+      <li>Supervisor‑wise achievement tracking</li>
+      <li>Auto‑refresh MIS dashboard using pivots</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>📈 Business Impact</h2>
+    <ul>
+      <li>Reduced reporting time by ~40%</li>
+      <li>Improved data accuracy & consistency</li>
+      <li>Enabled faster decision‑making for management</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>🎯 Conclusion</h2>
+    <p>This project demonstrates my ability to automate complex MIS workflows in Excel and convert raw operational data into management‑ready insights.</p>
+    <p><a href="index.html">← Back to Portfolio</a></p>
+  </div>
+</section>
+
+</body>
+</html>
