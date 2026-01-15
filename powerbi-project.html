@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power BI Project | Sales & Profit Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      margin: 0;
+      line-height: 1.7;
+    }
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(120deg, #0f172a, #020617);
+    }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h1, h2, h3 { color: #38bdf8; }
+    .box {
+      background: rgba(15,23,42,0.9);
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+    }
+    .img-box {
+      margin-top: 15px;
+      border: 2px dashed #334155;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      color: #94a3b8;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+    code {
+      background: #020617;
+      display: block;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #1e293b;
+      color: #e5e7eb;
+      overflow-x: auto;
+    }
+    ul li { margin-bottom: 8px; }
+    a { color: #38bdf8; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Power BI Project: Sales & Profit Dashboard</h1>
+  <p>Interactive business dashboard for management-level decision making</p>
+</header>
+
+<section>
+  <div class="box">
+    <h2>📌 Business Problem</h2>
+    <p>Senior management required a centralized dashboard to track sales, profit, and performance across states, brands, categories, and supervisors. Existing reports were static and time-consuming to analyze.</p>
+  </div>
+
+  <div class="box">
+    <h2>🗂 Dataset Overview</h2>
+    <ul>
+      <li>State-wise sales and profit data</li>
+      <li>Brand & product category mapping</li>
+      <li>Supervisor & regional hierarchy</li>
+      <li>Date-wise transactional records</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>🛠 Tools & Technologies</h2>
+    <ul>
+      <li>Power BI Desktop</li>
+      <li>Power Query for data transformation</li>
+      <li>DAX for calculated measures</li>
+      <li>Interactive visuals & slicers</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>📐 Data Model</h2>
+    <p>Star schema model with fact table for sales transactions and dimension tables for date, product, state, and supervisor.</p>
+    <div class="img-box">
+      <p><b>📷 Upload Screenshot:</b> Power BI Data Model View</p>
+      <p>(Replace this box with your actual data model screenshot)</p>
+      <!-- <img src="powerbi-model.png" alt="Power BI Data Model"> -->
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>📊 Key Dashboard Visuals</h2>
+
+    <h3>1️⃣ Sales & Profit Overview</h3>
+    <p>High-level KPIs showing Total Sales, Total Profit, and Profit Margin.</p>
+    <div class="img-box">
+      <p><b>📷 Upload Screenshot:</b> KPI Cards (Sales, Profit, Margin)</p>
+      <!-- <img src="kpi-cards.png" alt="Power BI KPI Cards"> -->
+    </div>
+
+    <h3>2️⃣ State-wise Performance</h3>
+    <p>Map and bar charts to compare regional performance.</p>
+    <div class="img-box">
+      <p><b>📷 Upload Screenshot:</b> State-wise Sales Map / Bar Chart</p>
+      <!-- <img src="state-performance.png" alt="State-wise Performance"> -->
+    </div>
+
+    <h3>3️⃣ Brand & Category Analysis</h3>
+    <p>Column and pie charts highlighting top-performing brands and categories.</p>
+    <div class="img-box">
+      <p><b>📷 Upload Screenshot:</b> Brand & Category Visuals</p>
+      <!-- <img src="brand-category.png" alt="Brand Category Analysis"> -->
+    </div>
+
+    <h3>4️⃣ Supervisor-wise Performance</h3>
+    <p>Supervisor-wise contribution and performance comparison.</p>
+    <div class="img-box">
+      <p><b>📷 Upload Screenshot:</b> Supervisor Performance Chart</p>
+      <!-- <img src="supervisor-performance.png" alt="Supervisor Performance"> -->
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>🧮 Sample DAX Measures</h2>
+
+    <h3>Total Sales</h3>
+    <code>
+Total Sales = SUM(Sales[Sales Amount])
+    </code>
+
+    <h3>Total Profit</h3>
+    <code>
+Total Profit = SUM(Sales[Profit])
+    </code>
+
+    <h3>Profit Margin %</h3>
+    <code>
+Profit Margin % = DIVIDE([Total Profit], [Total Sales], 0)
+    </code>
+  </div>
+
+  <div class="box">
+    <h2>📈 Business Impact</h2>
+    <ul>
+      <li>Single-view dashboard for leadership</li>
+      <li>Improved visibility into regional and brand performance</li>
+      <li>Faster decision-making with interactive filters</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>🎯 Conclusion</h2>
+    <p>This Power BI dashboard demonstrates my ability to design data models, write DAX measures, and build executive-ready dashboards for business performance monitoring.</p>
+    <p><a href="index.html">← Back to Portfolio</a></p>
+  </div>
+</section>
+
+</body>
+</html>
